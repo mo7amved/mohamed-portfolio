@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Focus List | Task Manager</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <a class="back" href="../../index.html#projects">← Portfolio</a>
+      <header>
+        <p class="eyebrow">YOUR PERSONAL WORKSPACE</p>
+        <h1>Focus<span>List.</span></h1>
+        <p class="muted">A little progress every day adds up.</p>
+      </header>
+      <section class="summary">
+        <div><span id="totalCount">0</span><small>Total tasks</small></div>
+        <div><span id="doneCount">0</span><small>Completed</small></div>
+        <div><span id="leftCount">0</span><small>To do</small></div>
+      </section>
+      <form id="taskForm">
+        <input
+          id="taskInput"
+          maxlength="120"
+          placeholder="What do you need to get done?"
+          aria-label="New task"
+          required
+        /><button type="submit">+ Add task</button>
+      </form>
+      <div class="toolbar">
+        <div class="filters" role="group" aria-label="Filter tasks">
+          <button class="filter active" data-filter="all">All</button
+          ><button class="filter" data-filter="active">To do</button
+          ><button class="filter" data-filter="done">Completed</button>
+        </div>
+        <button id="clearDone" class="clear">Clear completed</button>
+      </div>
+      <ul id="taskList" aria-live="polite"></ul>
+      <p id="emptyState" class="empty">
+        You're all caught up. Add a task to get started ✨
+      </p>
+      <p class="footnote">
+        Tasks are saved locally in this browser using Local Storage.
+      </p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

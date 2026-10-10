@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>SkyCast | Weather</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <a class="back" href="../../index.html#projects">← Portfolio</a>
+      <header>
+        <p class="eyebrow">YOUR DAY, AT A GLANCE</p>
+        <h1>Sky<span>Cast</span></h1>
+        <p class="muted">A little forecast helps you plan a lot.</p>
+      </header>
+      <form id="searchForm">
+        <label class="sr-only" for="cityInput">City name</label
+        ><input
+          id="cityInput"
+          placeholder="Search a city, e.g. Cairo"
+          value="Cairo"
+          required
+        /><button id="searchButton" type="submit">Search ↗</button>
+      </form>
+      <p id="status" class="status" aria-live="polite">
+        Search for a city to see its weather.
+      </p>
+      <section id="weather" class="weather" hidden>
+        <div class="current">
+          <div>
+            <p id="location" class="location"></p>
+            <p id="condition" class="condition"></p>
+            <div class="temp"><span id="temperature"></span><sup>°C</sup></div>
+            <p id="range" class="muted"></p>
+          </div>
+          <div id="weatherIcon" class="weather-icon">☀️</div>
+        </div>
+        <div class="details">
+          <div><small>FEELS LIKE</small><strong id="feels"></strong></div>
+          <div><small>WIND</small><strong id="wind"></strong></div>
+          <div><small>HUMIDITY</small><strong id="humidity"></strong></div>
+        </div>
+        <h2>Next days</h2>
+        <div id="forecast" class="forecast"></div>
+      </section>
+      <p class="source">
+        Weather data provided by Open-Meteo. Requires an internet connection.
+      </p>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
